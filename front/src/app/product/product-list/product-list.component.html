@@ -1,0 +1,37 @@
+<div>
+  <button type="button" [routerLink]="['/product']" class="btn btn-primary">Nova Produto</button>
+</div>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">SubCategoria</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>
+          {{product.name}}
+        </td>
+        <td>
+          {{product.subCategory?.categoryName}}
+        </td>
+        <td>
+          {{product.subCategory?.name}}
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="edit(product.id)">Editar</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="remove(product.id)">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,29 @@
+<div>
+  <button type="button" [routerLink]="['/category']" class="btn btn-primary">Nova Categoria</button>
+</div>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">        
+        <td>
+          {{category.name}}
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="edit(category.id)">Editar</button>          
+        </td>        
+        <td>
+          <button type="button" class="btn btn-danger" (click)="remove(category.id)">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
